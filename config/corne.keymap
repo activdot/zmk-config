@@ -17,9 +17,9 @@
             bindings = <&kp LS(G) &kp O &kp I &kp N &kp G &kp O &kp N &kp V &kp A &kp C &kp A &kp T &kp I &kp O &kp N &kp N0 &kp N2 &kp EXCL>;
             tap-ms = <10>;
         };
-        new_macro: new_macro {
+        Screenshot: Screenshot {
             compatible = "zmk,behavior-macro";
-            label = "NEW_MACRO";
+            label = "SCREENSHOT";
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
