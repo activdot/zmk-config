@@ -10,18 +10,21 @@
 
 / {
     macros {
-        Screenshot: Screenshot {
-            compatible = "zmk,behavior-macro";
-            label = "SCREENSHOT";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_WIN &kp LSHFT &kp S>;
-        };
         Unlock_Computer: Unlock_Computer {
             compatible = "zmk,behavior-macro";
             label = "UNLOCK_COMPUTER";
             #binding-cells = <0>;
             bindings = <&kp LS(G) &kp O &kp I &kp N &kp G &kp O &kp N &kp V &kp A &kp C &kp A &kp T &kp I &kp O &kp N &kp N0 &kp N2 &kp EXCL>;
             tap-ms = <10>;
+        };
+        new_macro: new_macro {
+            compatible = "zmk,behavior-macro";
+            label = "NEW_MACRO";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_WIN &kp LSHFT &kp S>,
+                <&macro_release>;
         };
     };
 
@@ -69,9 +72,9 @@
 
             label = "Raise";
             bindings = <
-     &kp TILDE       &kp EXCL          &kp AT         &kp HASH              &kp DLLR              &kp PRCNT            &kp CARET          &kp AMPS          &trans      &trans  &Unlock_Computer  &kp K_SCREENSAVER
-&kp LEFT_SHIFT  &kp BACKSLASH       &kp GRAVE        &kp UNDER  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS      &kp C_VOLUME_UP  &kp C_PLAY_PAUSE  &kp C_PREVIOUS  &kp C_NEXT            &trans       &bt BT_SEL 1
-     &kp LCTRL       &kp PIPE  &kp LEFT_BRACE  &kp RIGHT_BRACE      &kp LEFT_BRACKET      &kp RIGHT_BRACKET    &kp C_VOLUME_DOWN       &Screenshot          &trans      &trans            &trans       &bt BT_SEL 2
+     &kp TILDE       &kp EXCL          &kp AT         &kp HASH              &kp DLLR              &kp PRCNT            &kp CARET          &kp AMPS          &trans      &trans  &Unlock_Computer  &kp C_AL_LOCK
+&kp LEFT_SHIFT  &kp BACKSLASH       &kp GRAVE        &kp UNDER  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS      &kp C_VOLUME_UP  &kp C_PLAY_PAUSE  &kp C_PREVIOUS  &kp C_NEXT            &trans   &bt BT_SEL 1
+     &kp LCTRL       &kp PIPE  &kp LEFT_BRACE  &kp RIGHT_BRACE      &kp LEFT_BRACKET      &kp RIGHT_BRACKET    &kp C_VOLUME_DOWN       &Screenshot          &trans      &trans            &trans   &bt BT_SEL 2
                                                       &kp LGUI            &caps_word              &kp SPACE              &kp RET            &trans        &kp RALT
             >;
         };
